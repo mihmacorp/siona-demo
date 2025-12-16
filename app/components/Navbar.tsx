@@ -17,10 +17,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-base-100 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+          ? "md:bg-base-100/95 md:backdrop-blur-md md:shadow-sm"
+          : "md:bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,34 +72,83 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-base-300 bg-background">
-            <nav className="flex flex-col gap-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-base-100 backdrop-blur-lg border-t border-gray-200 shadow-lg">
+            <nav className="flex flex-col px-4 py-6">
               <a
                 href="#benefits"
-                className="opacity-70 hover:opacity-100 transition-colors hover:text-primary py-2"
+                className="group flex items-center justify-between py-3 px-4 rounded-lg hover:bg-muted/50 transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Benefits
+                <span className="text-foreground font-medium group-hover:text-primary transition-colors">
+                  Benefits
+                </span>
+                <svg
+                  className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
               </a>
               <a
                 href="#how-it-works"
-                className="opacity-70 hover:opacity-100 transition-colors hover:text-primary py-2"
+                className="group flex items-center justify-between py-3 px-4 rounded-lg hover:bg-muted/50 transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                How it works
+                <span className="text-foreground font-medium group-hover:text-primary transition-colors">
+                  How it works
+                </span>
+                <svg
+                  className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
               </a>
               <a
                 href="#who-its-for"
-                className="opacity-70 hover:opacity-100 transition-colors hover:text-primary py-2"
+                className="group flex items-center justify-between py-3 px-4 rounded-lg hover:bg-muted/50 transition-all duration-200"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Who it&apos;s for
+                <span className="text-foreground font-medium group-hover:text-primary transition-colors">
+                  Who it&apos;s for
+                </span>
+                <svg
+                  className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
               </a>
-              <button className="mt-2 btn btn-primary">
-                <a href="#cta" onClick={() => setIsMobileMenuOpen(false)}>
+              <div className="mt-4 pt-4 border-t border-gray-200">
+                <a
+                  href="#cta"
+                  className="btn btn-primary w-full justify-center"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
                   Get Early Access
                 </a>
-              </button>
+              </div>
             </nav>
           </div>
         )}

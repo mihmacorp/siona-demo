@@ -36,14 +36,16 @@ export default function BenefitsSection() {
     <section id="benefits" className="relative py-20 md:py-32 overflow-hidden">
       {/* Subtle Background */}
       <div className="absolute inset-0 bg-linear-to-b from-background via-muted/20 to-background"></div>
-      
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-muted/50 border border-gray-200 mb-6">
-            <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Key Benefits</span>
+            <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+              Key Benefits
+            </span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
+          <h2 className="text-3xl font-display md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
             Everything you need to run{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
               Odoo-as-a-Service
@@ -64,13 +66,16 @@ export default function BenefitsSection() {
               {/* Icon */}
               <div className="relative mb-6">
                 <div className="w-14 h-14 rounded-xl bg-muted/50 border border-gray-200 flex items-center justify-center group-hover:scale-110 group-hover:border-gray-300 transition-all duration-300">
-                  <benefit.icon className="h-7 w-7 text-foreground" strokeWidth={1.5} />
+                  <benefit.icon
+                    className="h-7 w-7 text-foreground"
+                    strokeWidth={1.5}
+                  />
                 </div>
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-primary/20 rounded-full group-hover:scale-150 transition-transform duration-300"></div>
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-foreground mb-3">
+              <h3 className="text-xl font-display font-bold text-foreground mb-3">
                 {benefit.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -81,7 +86,7 @@ export default function BenefitsSection() {
               <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           ))}
-          
+
           {/* Empty slots for visual balance in 3-column layout */}
           <div className="hidden lg:block"></div>
           <div className="hidden lg:block"></div>

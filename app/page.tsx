@@ -1,7 +1,10 @@
 import Navbar from "./components/Navbar";
 import BenefitsSection from "./components/sections/BenefitsSection";
+import FinalCtaSection from "./components/sections/CTASection";
 import HeroSection from "./components/sections/HeroSection";
+import HowItWorksSection from "./components/sections/HowItWorks";
 import SubHeroSection from "./components/sections/SubHeroSection";
+import WhoItsForSection from "./components/sections/WhoIsItForSection";
 
 export default function Home() {
   return (
@@ -10,6 +13,9 @@ export default function Home() {
       <HeroSection />
       <SubHeroSection />
       <BenefitsSection />
+      <HowItWorksSection />
+      <WhoItsForSection />
+      <FinalCtaSection />
     </>
   );
 }

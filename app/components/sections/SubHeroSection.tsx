@@ -8,7 +8,7 @@ export default function SubHeroSection() {
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-linear-to-b from-background via-muted/30 to-background"></div>
-      
+
       {/* Animated Gradient Orbs */}
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-700"></div>
@@ -38,11 +38,13 @@ export default function SubHeroSection() {
           <div className="relative">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-muted/50 border border-gray-200 mb-6">
-              <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Complete Solution</span>
+              <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                Complete Solution
+              </span>
             </div>
 
             {/* Main Text */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl text-foreground leading-tight font-bold mb-6">
+            <h2 className="text-2xl font-display md:text-3xl lg:text-4xl text-foreground leading-tight font-bold mb-6">
               Siona lets Odoo consultants deliver{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">
@@ -52,7 +54,7 @@ export default function SubHeroSection() {
               </span>{" "}
               from their own cloud account
             </h2>
-            
+
             <p className="text-lg text-muted-foreground mb-10">
               Fully automated. Zero infrastructure hassle.
             </p>
@@ -63,7 +65,10 @@ export default function SubHeroSection() {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-foreground/5 rounded-full blur-2xl"></div>
                 <div className="relative flex items-start gap-4">
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-foreground/10 border border-gray-200 flex items-center justify-center group-hover/card:scale-110 transition-transform duration-300">
-                    <Check className="h-5 w-5 text-foreground font-bold" strokeWidth={3} />
+                    <Check
+                      className="h-5 w-5 text-foreground font-bold"
+                      strokeWidth={3}
+                    />
                   </div>
                   <div>
                     <p className="text-foreground font-semibold text-lg">
@@ -80,7 +85,10 @@ export default function SubHeroSection() {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-foreground/5 rounded-full blur-2xl"></div>
                 <div className="relative flex items-start gap-4">
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-foreground/10 border border-gray-200 flex items-center justify-center group-hover/card:scale-110 transition-transform duration-300">
-                    <Check className="h-5 w-5 text-foreground font-bold" strokeWidth={3} />
+                    <Check
+                      className="h-5 w-5 text-foreground font-bold"
+                      strokeWidth={3}
+                    />
                   </div>
                   <div>
                     <p className="text-foreground font-semibold text-lg">
