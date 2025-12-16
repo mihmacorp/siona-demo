@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         data-theme="light"
-        className={` ${geistMono.variable} ${cabin.variable} ${interTight.variable} antialiased`}
+        className={`${geistMono.variable} ${cabin.variable} ${interTight.variable} antialiased`}
       >
         {children}
       </body>
