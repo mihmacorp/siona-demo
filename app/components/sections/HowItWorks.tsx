@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Cloud, Rocket, UserPlus } from "lucide-react";
 import Image from "next/image";
 
@@ -32,7 +33,13 @@ export default function HowItWorksSection() {
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-16 md:mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-muted/50 border border-gray-200 mb-6">
             <span className="text-xs font-medium uppercase tracking-wide opacity-80">How It Works</span>
           </div>
@@ -45,7 +52,7 @@ export default function HowItWorksSection() {
           <p className="text-lg opacity-80">
             Three simple steps from setup to deployment
           </p>
-        </div>
+        </motion.div>
 
         {/* Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -57,9 +64,13 @@ export default function HowItWorksSection() {
             {/* Steps */}
             <div className="flex flex-col gap-6 lg:gap-8">
               {steps.map((step, index) => (
-                <div
+                <motion.div
                   key={index}
                   className="group relative bg-base-100/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 hover:border-gray-300 hover:shadow-xl transition-all duration-300"
+                  initial={{ opacity: 0, x: -40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: index * 0.2 }}
                 >
                   {/* Step Number - Desktop */}
                   <div className="hidden lg:flex absolute -left-16 top-6 w-12 h-12 rounded-full bg-base-100 border-2 border-gray-200 items-center justify-center z-10 group-hover:border-primary group-hover:scale-110 transition-all duration-300 shadow-sm">
@@ -95,13 +106,19 @@ export default function HowItWorksSection() {
 
                   {/* Hover Effect */}
                   <div className="absolute inset-0 rounded-xl bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* Right Column - Image */}
-          <div className="relative group order-first lg:order-last">
+          <motion.div 
+            className="relative group order-first lg:order-last"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          >
             <div className="relative h-80 md:h-100 lg:h-125 rounded-3xl overflow-hidden shadow-2xl">
             
               <Image
@@ -114,7 +131,7 @@ export default function HowItWorksSection() {
              
             </div>
             
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import BenefitsSection from "./components/sections/BenefitsSection";
 import FinalCtaSection from "./components/sections/CTASection";
@@ -16,6 +17,7 @@ export default function Home() {
       <HowItWorksSection />
       <WhoItsForSection />
       <FinalCtaSection />
+      <Footer />
     </>
   );
 }

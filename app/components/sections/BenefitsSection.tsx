@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Receipt, Server, Shield, Wallet, Zap } from "lucide-react";
 
 const benefits = [
@@ -39,7 +40,13 @@ export default function BenefitsSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+        <motion.div 
+          className="max-w-3xl mx-auto text-center mb-16 md:mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-muted/50 border border-gray-200 mb-6">
             <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
               Key Benefits
@@ -54,14 +61,18 @@ export default function BenefitsSection() {
           <p className="text-lg text-muted-foreground">
             A complete platform built for consulting businesses
           </p>
-        </div>
+        </motion.div>
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {benefits.map((benefit, index) => (
-            <div
+            <motion.div
               key={index}
               className="group relative bg-background/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-xl transition-all duration-300"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.15 }}
             >
               {/* Icon */}
               <div className="relative mb-6">
@@ -84,7 +95,7 @@ export default function BenefitsSection() {
 
               {/* Hover Effect */}
               <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            </div>
+            </motion.div>
           ))}
 
           {/* Empty slots for visual balance in 3-column layout */}

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import Image from "next/image";
 
@@ -17,7 +18,13 @@ export default function SubHeroSection() {
         {/* Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Image */}
-          <div className="relative group">
+          <motion.div 
+            className="relative group"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="relative h-100 lg:h-125 rounded-3xl overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-secondary/20 mix-blend-overlay z-10"></div>
               <Image
@@ -32,10 +39,16 @@ export default function SubHeroSection() {
             {/* Decorative elements */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl"></div>
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-secondary/20 rounded-full blur-3xl"></div>
-          </div>
+          </motion.div>
 
           {/* Right Column - Content */}
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-muted/50 border border-gray-200 mb-6">
               <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
@@ -101,7 +114,7 @@ export default function SubHeroSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

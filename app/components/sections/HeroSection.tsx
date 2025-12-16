@@ -1,6 +1,6 @@
 "use client";
 
-
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
@@ -11,7 +11,12 @@ export default function HeroSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-150 bg-linear-to-br from-primary/10 via-secondary/5 to-transparent rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto">
+        <motion.div 
+          className="text-center max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
           <h1 className="text-4xl font-display! sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-tight text-balance leading-tight">
             Turn Your Odoo Consulting Business Into a{" "}
             <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
@@ -24,7 +29,12 @@ export default function HeroSection() {
             without DevOps.
           </p>
 
-          <div className="mt-10 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <motion.div 
+            className="mt-10 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+          >
             <button className="btn btn-primary btn-lg">
               <a className="flex items-center " href="#cta">
                 Start in minutes
@@ -38,8 +48,8 @@ export default function HeroSection() {
             >
               Join the early-access program
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
