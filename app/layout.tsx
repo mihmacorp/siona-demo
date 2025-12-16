@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter_Tight } from "next/font/google";
+import { Geist_Mono, Inter_Tight, Cabin } from "next/font/google";
 import "./globals.css";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
+  subsets: ["latin"],
+});
+const cabin = Cabin({
+  variable: "--font-cabin",
   subsets: ["latin"],
 });
 
@@ -26,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         data-theme="light"
-        className={` ${geistMono.variable} ${interTight.variable} antialiased`}
+        className={` ${geistMono.variable} ${cabin.variable} ${interTight.variable} antialiased`}
       >
         {children}
       </body>
