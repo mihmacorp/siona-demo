@@ -47,6 +47,9 @@
   --font-display: var(--font-cabin);
   --font-mono: var(--font-geist-mono);
 }
+html {
+  scroll-behavior: smooth;
+}
 .btn {
   @apply rounded-box
 }
