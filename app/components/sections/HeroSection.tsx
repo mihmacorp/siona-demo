@@ -35,16 +35,9 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
           >
-            <button className="btn btn-primary btn-lg">
-              <a className="flex items-center " href="#cta">
-                Start in minutes
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </button>
-
             <a
-              href="#cta"
-              className="text-base-content/70 hover:text-base-content transition-colors font-medium underline underline-offset-4 decoration-border hover:decoration-foreground"
+              href="/early-access"
+              className="btn btn-primary btn-lg flex items-center"
             >
               Join the early-access program
             </a>

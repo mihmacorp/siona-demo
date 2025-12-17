@@ -56,7 +56,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-4">
             <button className="btn btn-primary">
-              <a href="#cta">Get Early Access</a>
+              <a href="/early-access">Get Early Access</a>
             </button>
           </div>
 
@@ -142,7 +142,7 @@ export default function Navbar() {
               </a>
               <div className="mt-4 pt-4 border-t border-gray-200">
                 <a
-                  href="#cta"
+                  href="/early-access"
                   className="btn btn-primary w-full justify-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
