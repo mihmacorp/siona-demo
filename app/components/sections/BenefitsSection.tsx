@@ -18,7 +18,7 @@ const benefits = [
   {
     icon: Receipt,
     title: "Automated billing",
-    description: "Subscriptions, renewals, invoices — all handled for you.",
+    description: "Subscriptions, renewals, invoices all handled for you.",
   },
   {
     icon: Wallet,
@@ -40,7 +40,7 @@ export default function BenefitsSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="max-w-3xl mx-auto text-center mb-16 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +72,11 @@ export default function BenefitsSection() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.15 }}
+              transition={{
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+                delay: index * 0.15,
+              }}
             >
               {/* Icon */}
               <div className="relative mb-6">
@@ -89,7 +93,7 @@ export default function BenefitsSection() {
               <h3 className="text-xl font-display font-bold text-foreground mb-3">
                 {benefit.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-base-content/80 leading-relaxed">
                 {benefit.description}
               </p>
 

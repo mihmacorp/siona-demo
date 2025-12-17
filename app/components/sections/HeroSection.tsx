@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-150 bg-linear-to-br from-primary/10 via-secondary/5 to-transparent rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -24,12 +24,12 @@ export default function HeroSection() {
             </span>
           </h1>
 
-          <p className="mt-6 md:mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
-            Deploy, manage, and bill your client environments automatically —
+          <p className="mt-6 md:mt-8 text-lg md:text-xl text-base-content/80 max-w-2xl mx-auto text-balance leading-relaxed">
+            Deploy, manage, and bill your client environments automatically
             without DevOps.
           </p>
 
-          <motion.div 
+          <motion.div
             className="mt-10 md:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export default function HeroSection() {
 
             <a
               href="#cta"
-              className="text-muted-foreground hover:text-foreground transition-colors font-medium underline underline-offset-4 decoration-border hover:decoration-foreground"
+              className="text-base-content/70 hover:text-base-content transition-colors font-medium underline underline-offset-4 decoration-border hover:decoration-foreground"
             >
               Join the early-access program
             </a>
