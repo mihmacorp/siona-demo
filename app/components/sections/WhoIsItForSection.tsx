@@ -23,13 +23,16 @@ const audiences = [
 
 export default function WhoItsForSection() {
   return (
-    <section id="who-its-for" className="relative py-20 md:py-32 overflow-hidden">
+    <section
+      id="who-its-for"
+      className="relative py-20 md:py-32 overflow-hidden"
+    >
       {/* Subtle Background */}
       <div className="absolute inset-0 bg-linear-to-b from-base-100 via-muted/20 to-base-100"></div>
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div className="relative max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="max-w-3xl mx-auto text-center mb-16 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +40,9 @@ export default function WhoItsForSection() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-muted/50 border border-gray-200 mb-6">
-            <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Who It&apos;s For</span>
+            <span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
+              Who It&apos;s For
+            </span>
           </div>
           <h2 className="text-3xl font-display md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
             Built for{" "}
@@ -52,7 +57,7 @@ export default function WhoItsForSection() {
         </motion.div>
 
         {/* Audiences Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid md:px-24 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
           {audiences.map((audience, index) => (
             <motion.div
               key={index}
@@ -60,7 +65,11 @@ export default function WhoItsForSection() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.15 }}
+              transition={{
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+                delay: index * 0.15,
+              }}
             >
               {/* Number Badge */}
               <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary/10 border border-gray-200 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

@@ -9,19 +9,22 @@ const steps = [
     number: "1",
     icon: Cloud,
     title: "Connect your cloud account",
-    description: "Link your Hetzner account in seconds. Support for AWS, Azure, and GCP coming soon.",
+    description:
+      "Link your Hetzner account in seconds. Support for AWS, Azure, and GCP coming soon.",
   },
   {
     number: "2",
     icon: UserPlus,
     title: "Add a new client",
-    description: "Configure Odoo version, modules, and subscription plan through our intuitive dashboard.",
+    description:
+      "Configure Odoo version and subscription plan through our intuitive dashboard.",
   },
   {
     number: "3",
     icon: Rocket,
     title: "Deploy automatically",
-    description: "Siona provisions the environment and delivers access credentials to your client instantly.",
+    description:
+      "Siona provisions the environment and delivers access credentials to your client instantly.",
   },
 ];
 
