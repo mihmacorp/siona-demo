@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Inter_Tight, Cabin } from "next/font/google";
 import "./globals.css";
-
+import { Analytics } from "@vercel/analytics/next";
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
@@ -32,6 +32,7 @@ export default function RootLayout({
         data-theme="light"
         className={`${geistMono.variable} ${cabin.variable} ${interTight.variable} antialiased`}
       >
+        <Analytics />
         {children}
       </body>
     </html>
