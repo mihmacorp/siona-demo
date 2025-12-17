@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Receipt, Server, Shield, Wallet, Zap } from "lucide-react";
+import { Receipt, Server, Shield, Wallet, Zap, Plus } from "lucide-react";
 
 const benefits = [
   {
@@ -29,6 +29,12 @@ const benefits = [
     icon: Server,
     title: "Full control",
     description: "Everything runs in your cloud account.",
+  },
+  {
+    icon: Plus,
+    title: "Install New Modules",
+    description:
+      "Add a new module to your client's environment right from the dashboard.",
   },
 ];
 

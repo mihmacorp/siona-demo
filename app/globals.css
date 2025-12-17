@@ -34,7 +34,7 @@
   --color-error-content: oklch(27% 0.105 12.094);
   --radius-selector: 0.5rem;
   --radius-field: 0.25rem;
-  --radius-box: 5rem;
+  --radius-box: 0.5rem;
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
   --border: 1px;
@@ -51,5 +51,5 @@ html {
   scroll-behavior: smooth;
 }
 .btn {
-  @apply rounded-box
+  @apply rounded-full
 }
