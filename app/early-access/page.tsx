@@ -25,7 +25,7 @@ const earlyAccessSchema = z.object({
       message: "Please select your role",
     }),
   instanceCount: z
-    .enum(["1-3", "4-10", "11-25", "25+"])
+    .enum(["0", "1-3", "4-10", "11-25", "25+"])
     .refine((val) => val !== undefined, {
       message: "Please select instance count",
     }),
@@ -37,6 +37,7 @@ export default function EarlyAccessPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [declinedCall, setDeclinedCall] = useState(false);
+  const [acceptedCall, setAcceptedCall] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const {
@@ -78,6 +79,9 @@ export default function EarlyAccessPage() {
 
       setIsSubmitted(true);
       reset();
+
+      // Scroll to top to show thank you message
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
       console.error("Submission error:", error);
       setErrorMessage("An unexpected error occurred. Please try again.");
@@ -125,7 +129,7 @@ export default function EarlyAccessPage() {
 
           {/* Form Card */}
           <motion.div
-            className="relative bg-base-100 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-gray-200 shadow-xl"
+            className="relative bg-base-100 backdrop-blur-sm rounded-2xl p-8 md:p-12  border-gray-200 lg:shadow-xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
@@ -270,6 +274,7 @@ export default function EarlyAccessPage() {
                     <option value="" disabled>
                       Select instance count
                     </option>
+                    <option value="0">0 instances</option>
                     <option value="1-3">1-3 instances</option>
                     <option value="4-10">4-10 instances</option>
                     <option value="11-25">11-25 instances</option>
@@ -317,23 +322,27 @@ export default function EarlyAccessPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-success/10 mb-6">
-                  <CheckCircle2 className="h-10 w-10 text-success" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
-                  Thanks for joining the Siona early access program 👋
-                </h2>
-                <p className=" text-base-content/70 leading-relaxed mb-8 max-w-xl mx-auto">
-                  We&apos;re building Siona closely with Odoo consultants to
-                  make sure it solves real, day-to-day problems, not theoretical
-                  ones.
-                  <br />
-                  <br />
-                  Your interest means a lot.
-                </p>
+                {!declinedCall && !acceptedCall && (
+                  <>
+                    <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-success/10 mb-6">
+                      <CheckCircle2 className="h-10 w-10 text-success" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
+                      Thanks for joining the Siona early access program 👋
+                    </h2>
+                    <p className=" text-base-content/70 leading-relaxed mb-8 max-w-xl mx-auto">
+                      We&apos;re building Siona closely with Odoo consultants to
+                      make sure it solves real, day-to-day problems, not
+                      theoretical ones.
+                      <br />
+                      <br />
+                      Your interest means a lot.
+                    </p>
+                  </>
+                )}
 
                 {/* Call to Action for Interview */}
-                {!declinedCall ? (
+                {!declinedCall && !acceptedCall ? (
                   <div className="bg-muted/30 rounded-xl p-6 md:p-8 mb-8 max-w-2xl mx-auto border border-gray-200">
                     <h3 className="text-lg text-left font-display font-semibold mb-4">
                       Would you be open to a short 10–15 minute call to share
@@ -346,20 +355,18 @@ export default function EarlyAccessPage() {
                       <p className="flex items-center gap-2">
                         <span className="text-primary">✓</span> No demo
                       </p>
-                      <p className="flex items-center gap-2">
+                      <p className="flex items-center text-left gap-2">
                         <span className="text-primary">✓</span> Just learning
                         from your experience
                       </p>
                     </div>
-                    <div className="flex items-center mr-auto gap-3">
-                      <Link
-                        href="https://calendly.com/your-calendar-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <div className="flex flex-col md:flex-row items-center mr-auto gap-3">
+                      <button
+                        onClick={() => setAcceptedCall(true)}
                         className="btn btn-primary btn-sm w-full sm:w-auto"
                       >
                         Yes, Happy to help
-                      </Link>
+                      </button>
                       <button
                         onClick={() => setDeclinedCall(true)}
                         className="btn btn-ghost btn-sm"
@@ -367,6 +374,26 @@ export default function EarlyAccessPage() {
                         No, not right now
                       </button>
                     </div>
+                  </div>
+                ) : acceptedCall ? (
+                  <div className="bg-muted/30 rounded-xl p-6 md:p-8 mb-8 max-w-2xl mx-auto border border-gray-200">
+                    <h3 className="text-xl font-display font-bold text-foreground mb-4">
+                      Awesome, thank you!
+                    </h3>
+                    <p className="text-base text-base-content/70 leading-relaxed mb-6">
+                      Pick a time that works for you below.
+                      <br />
+                      The call will take 10–15 minutes, and the goal is simply
+                      to understand your workflow and challenges.
+                    </p>
+                    <Link
+                      href="https://calendly.com/mihmacorporation/15min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary btn-lg w-full sm:w-auto"
+                    >
+                      👉 Schedule a short call
+                    </Link>
                   </div>
                 ) : (
                   <div className="bg-base-300/30 rounded-xl p-6 md:p-8 mb-8 max-w-2xl mx-auto border border-gray-200 text-center">

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -35,12 +35,12 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
           >
-            <a
+            <Link
               href="/early-access"
               className="btn btn-primary btn-lg flex items-center"
             >
               Join the early-access program
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
